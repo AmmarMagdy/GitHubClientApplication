@@ -10,17 +10,12 @@ import Alamofire
 import KeychainSwift
 
 class Request {
-    static func requestAPI(_ completionHandler: @escaping (Result<[Repository], Error>) -> Void) {
-        
+    
+    static func requestAPI(router: Router, _ completionHandler: @escaping (Result<Data, Error>) -> Void) {
         AF.request(Router.getAllRepositories).responseData { (response: AFDataResponse<Data>) in
             switch response.result {
             case .success(let data):
-                do {
-                    let repos =  try JSONDecoder().decode([Repository].self, from: data)
-                    completionHandler(.success(repos))
-                } catch let error {
-                    completionHandler(.failure(error))
-                }
+                completionHandler(.success(data))
             case.failure(let error):
                 completionHandler(.failure(error))
             }

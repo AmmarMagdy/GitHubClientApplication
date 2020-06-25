@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RepoTableCell: UITableViewCell {
 
     @IBOutlet private weak var repoNameLabel: UILabel!
+    @IBOutlet weak var repoOwnerImageView: UIImageView!
+    @IBOutlet weak var projectNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func loadCellDate(title: String) {
-        self.repoNameLabel.text = title
+    func loadCellDate(repoName: String, ownerImage: String, projaectName: String) {
+        self.repoNameLabel.text = repoName
+        self.repoOwnerImageView.showImage(ownerImage)
+        self.projectNameLabel.text = projaectName
     }
     
 }

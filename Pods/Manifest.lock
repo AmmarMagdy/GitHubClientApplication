@@ -1,20 +1,32 @@
 PODS:
   - Alamofire (5.2.1)
   - KeychainSwift (19.0.0)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
 
 DEPENDENCIES:
   - Alamofire
   - KeychainSwift
+  - Kingfisher
+  - NVActivityIndicatorView
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - KeychainSwift
+    - Kingfisher
+    - NVActivityIndicatorView
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
 
-PODFILE CHECKSUM: ee42f8da9a5bb1f35824dd3bcb41d5c49b23dc71
+PODFILE CHECKSUM: d8fd748da76603e6a288c64e490c0b25cf33a519
 
 COCOAPODS: 1.9.1

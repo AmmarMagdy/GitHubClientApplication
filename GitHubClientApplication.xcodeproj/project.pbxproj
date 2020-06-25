@@ -14,6 +14,14 @@
 		A0CFADFE24A50C23001FE167 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFADFD24A50C23001FE167 /* Request.swift */; };
 		A0CFAE0024A50C74001FE167 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFADFF24A50C74001FE167 /* Router.swift */; };
 		A0CFAE0324A51387001FE167 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFAE0224A51387001FE167 /* Repository.swift */; };
+		A0CFAE0724A516CF001FE167 /* GetReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFAE0524A516CF001FE167 /* GetReposViewController.swift */; };
+		A0CFAE0824A516CF001FE167 /* GetReposViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0CFAE0624A516CF001FE167 /* GetReposViewController.xib */; };
+		A0CFAE0B24A5177B001FE167 /* GetReposPresenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFAE0A24A5177B001FE167 /* GetReposPresenters.swift */; };
+		A0CFAE0F24A51915001FE167 /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFAE0D24A51914001FE167 /* RepoTableCell.swift */; };
+		A0CFAE1024A51915001FE167 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0CFAE0E24A51914001FE167 /* RepoTableCell.xib */; };
+		A0CFAE1324A51F1B001FE167 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFAE1224A51F1B001FE167 /* Alert.swift */; };
+		A0CFAE1524A52BFB001FE167 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFAE1424A52BFB001FE167 /* CustomView.swift */; };
+		A0CFAE1824A52F4F001FE167 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFAE1724A52F4F001FE167 /* UIImageView+Extensions.swift */; };
 		AFC5B382FC89FB3A7C9C9D23 /* Pods_GitHubClientApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E57511EBD5FDCF9F6BF61 /* Pods_GitHubClientApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +37,14 @@
 		A0CFADFD24A50C23001FE167 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		A0CFADFF24A50C74001FE167 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A0CFAE0224A51387001FE167 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		A0CFAE0524A516CF001FE167 /* GetReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposViewController.swift; sourceTree = "<group>"; };
+		A0CFAE0624A516CF001FE167 /* GetReposViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetReposViewController.xib; sourceTree = "<group>"; };
+		A0CFAE0A24A5177B001FE167 /* GetReposPresenters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposPresenters.swift; sourceTree = "<group>"; };
+		A0CFAE0D24A51914001FE167 /* RepoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableCell.swift; sourceTree = "<group>"; };
+		A0CFAE0E24A51914001FE167 /* RepoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableCell.xib; sourceTree = "<group>"; };
+		A0CFAE1224A51F1B001FE167 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		A0CFAE1424A52BFB001FE167 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		A0CFAE1724A52F4F001FE167 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		C0C6E781DD12B55774C9E004 /* Pods-GitHubClientApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubClientApplication.release.xcconfig"; path = "Target Support Files/Pods-GitHubClientApplication/Pods-GitHubClientApplication.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +90,10 @@
 		A0918CC5249D43A700968F84 /* GitHubClientApplication */ = {
 			isa = PBXGroup;
 			children = (
+				A0CFAE1124A51EFF001FE167 /* Utilities */,
+				A0CFAE0C24A518DD001FE167 /* Views */,
+				A0CFAE0924A5173A001FE167 /* Presenters */,
+				A0CFAE0424A51697001FE167 /* Controllers */,
 				A0CFADFC24A50C10001FE167 /* Network */,
 				A0CFAE0124A51162001FE167 /* Model */,
 				A0918CC6249D43A700968F84 /* AppDelegate.swift */,
@@ -100,6 +120,50 @@
 				A0CFAE0224A51387001FE167 /* Repository.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A0CFAE0424A51697001FE167 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A0CFAE0524A516CF001FE167 /* GetReposViewController.swift */,
+				A0CFAE0624A516CF001FE167 /* GetReposViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A0CFAE0924A5173A001FE167 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				A0CFAE0A24A5177B001FE167 /* GetReposPresenters.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		A0CFAE0C24A518DD001FE167 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0CFAE0D24A51914001FE167 /* RepoTableCell.swift */,
+				A0CFAE0E24A51914001FE167 /* RepoTableCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0CFAE1124A51EFF001FE167 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A0CFAE1624A52F01001FE167 /* Extensions */,
+				A0CFAE1224A51F1B001FE167 /* Alert.swift */,
+				A0CFAE1424A52BFB001FE167 /* CustomView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A0CFAE1624A52F01001FE167 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A0CFAE1724A52F4F001FE167 /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A4C5FAECE44CC76094D409B7 /* Frameworks */ = {
@@ -170,7 +234,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CFAE1024A51915001FE167 /* RepoTableCell.xib in Resources */,
 				A0918CD3249D43A900968F84 /* LaunchScreen.storyboard in Resources */,
+				A0CFAE0824A516CF001FE167 /* GetReposViewController.xib in Resources */,
 				A0918CD0249D43A900968F84 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,8 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CFAE1324A51F1B001FE167 /* Alert.swift in Sources */,
 				A0CFAE0024A50C74001FE167 /* Router.swift in Sources */,
+				A0CFAE1824A52F4F001FE167 /* UIImageView+Extensions.swift in Sources */,
+				A0CFAE0724A516CF001FE167 /* GetReposViewController.swift in Sources */,
+				A0CFAE0B24A5177B001FE167 /* GetReposPresenters.swift in Sources */,
 				A0918CCB249D43A700968F84 /* ViewController.swift in Sources */,
+				A0CFAE1524A52BFB001FE167 /* CustomView.swift in Sources */,
+				A0CFAE0F24A51915001FE167 /* RepoTableCell.swift in Sources */,
 				A0CFAE0324A51387001FE167 /* Repository.swift in Sources */,
 				A0CFADFE24A50C23001FE167 /* Request.swift in Sources */,
 				A0918CC7249D43A700968F84 /* AppDelegate.swift in Sources */,

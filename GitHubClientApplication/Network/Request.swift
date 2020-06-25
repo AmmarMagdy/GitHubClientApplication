@@ -10,17 +10,19 @@ import Alamofire
 import KeychainSwift
 
 class Request {
-    static func requestAPI(_ completionHandler: @escaping (Result<Data, Error>, Int?) -> Void) {
+    static func requestAPI(_ completionHandler: @escaping (Result<[Repository], Error>) -> Void) {
         
         AF.request(Router.getAllRepositories).responseData { (response: AFDataResponse<Data>) in
             switch response.result {
             case .success(let data):
-                completionHandler(.success(data), response.response?.statusCode)
-                if response.response?.statusCode == 422 {
-                    KeychainSwift().delete("auth_token")
+                do {
+                    let repos =  try JSONDecoder().decode([Repository].self, from: data)
+                    completionHandler(.success(repos))
+                } catch let error {
+                    completionHandler(.failure(error))
                 }
             case.failure(let error):
-                completionHandler(.failure(error), response.response?.statusCode)
+                completionHandler(.failure(error))
             }
         }
     }

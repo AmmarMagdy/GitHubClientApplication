@@ -7,6 +7,6 @@ target 'GitHubClientApplication' do
 
   # Pods for GitHubClientApplication
   pod 'Alamofire'
-
+  pod 'KeychainSwift'
 
 end

@@ -6,5 +6,7 @@ target 'GitHubClientApplication' do
   use_frameworks!
 
   # Pods for GitHubClientApplication
+  pod 'Alamofire'
+
 
 end

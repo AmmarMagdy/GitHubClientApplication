@@ -12,12 +12,15 @@ class GetReposViewController: UIViewController, NVActivityIndicatorViewable {
     
     @IBOutlet weak var reposTableView: UITableView!
     
+    var getRepoPresenter: GetRepoPresenter?
     private var repos: [Repository]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCustomCells()
-        fetchReposFromAPI()
+        getRepoPresenter = GetReposImpl(view: self)
+        self.startAnimating()
+        getRepoPresenter?.fetchReposFromAPI()
     }
     
 }
@@ -62,7 +65,6 @@ extension GetReposViewController: UITableViewDelegate {
             repoName: repos[indexPath.section].owner?.login ?? "",
             ownerImage: repos[indexPath.section].owner?.avatarUrl ?? "",
             projaectName: "Project Name is \(repos[indexPath.section].name ?? "")")
-        //            title: repos[indexPath.section].owner?.login ?? "")
     }
 }
 
@@ -74,23 +76,12 @@ extension GetReposViewController {
         let repoCellNib = UINib(nibName: "RepoTableCell", bundle: nil)
         reposTableView.register(repoCellNib, forCellReuseIdentifier: "RepoCell")
     }
-    
-    private func fetchReposFromAPI() {
-        self.startAnimating()
-        Request.requestAPI(router: Router.getAllRepositories) { [unowned self](response) in
-            self.stopAnimating()
-            switch response {
-            case .success(let result):
-                do {
-                    self.repos = try JSONDecoder().decode([Repository].self, from: result)
-                    self.reposTableView.reloadData()
-                } catch let error {
-                    // Can't parse posts
-                    print(error)
-                }
-            case .failure(let error):
-                Alert.shared.showAlert(title: "Error", message: error.localizedDescription)
-            }
-        }
+}
+
+extension GetReposViewController: GetRepoView {
+    func showRepos(_ repos: [Repository]) {
+        self.stopAnimating()
+        self.repos = repos
+        self.reposTableView.reloadData()
     }
 }
